@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="1568.1159420289857" y="223.66071428571428"/>
         </scene>
-        <!--Task Timer-->
+        <!--Timer-->
         <scene sceneID="woE-Jp-Rrw">
             <objects>
-                <viewController id="aqr-E5-K51" sceneMemberID="viewController">
+                <viewController id="aqr-E5-K51" customClass="TimerViewController" customModule="TaskTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SUX-6j-HNY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Cup-dm-cSM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Task Timer" id="3jA-md-fjM"/>
+                    <navigationItem key="navigationItem" title="Timer" id="3jA-md-fjM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lA-Xr-Kda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,8 +101,7 @@
         <!--Productivity Stats-->
         <scene sceneID="bNh-gM-lha">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6nD-69-kzm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="nkc-nc-Day" sceneMemberID="viewController">
+                <viewController id="nkc-nc-Day" customClass="StatsViewController" customModule="TaskTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2I-oO-HBX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,13 +110,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Productivity Stats" id="Smd-Qs-y3o"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6nD-69-kzm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2470" y="1690"/>
         </scene>
         <!--Settings-->
         <scene sceneID="rMy-wU-3Bu">
             <objects>
-                <viewController id="OEb-9U-Olp" sceneMemberID="viewController">
+                <viewController id="OEb-9U-Olp" customClass="SettingsViewController" customModule="TaskTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zm3-nP-KiB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
         <!--New Timer-->
         <scene sceneID="Ml4-t6-U4p">
             <objects>
-                <viewController id="Dfe-pU-dmY" sceneMemberID="viewController">
+                <viewController id="Dfe-pU-dmY" customClass="TimerSelectViewController" customModule="TaskTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xWq-XX-cPD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,7 +190,7 @@
         <!--Project List-->
         <scene sceneID="g6r-FS-dwf">
             <objects>
-                <tableViewController id="eTC-24-KAv" sceneMemberID="viewController">
+                <tableViewController id="eTC-24-KAv" customClass="ProjectListTableViewController" customModule="TaskTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JSV-aN-QHu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,7 +222,7 @@
         <!--Project-->
         <scene sceneID="QLk-mb-3Nn">
             <objects>
-                <tableViewController id="dRf-xQ-ysY" sceneMemberID="viewController">
+                <tableViewController id="dRf-xQ-ysY" customClass="ProjectTableViewController" customModule="TaskTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PoS-db-0JW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,7 +254,7 @@
         <!--Objective-->
         <scene sceneID="kqw-7o-Yo4">
             <objects>
-                <tableViewController id="SeE-ts-NnG" sceneMemberID="viewController">
+                <tableViewController id="SeE-ts-NnG" customClass="ObjectiveTableViewController" customModule="TaskTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cgg-8M-OKg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

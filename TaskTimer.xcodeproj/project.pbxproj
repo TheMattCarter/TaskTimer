@@ -13,6 +13,13 @@
 		271EC05D2515BA8C002B0442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271EC05B2515BA8C002B0442 /* Main.storyboard */; };
 		271EC05F2515BA8D002B0442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271EC05E2515BA8D002B0442 /* Assets.xcassets */; };
 		271EC0622515BA8D002B0442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271EC0602515BA8D002B0442 /* LaunchScreen.storyboard */; };
+		276630B5251627CB00E75CFC /* TimerSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630B4251627CB00E75CFC /* TimerSelectViewController.swift */; };
+		276630B72516280500E75CFC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630B62516280500E75CFC /* TimerViewController.swift */; };
+		276630B92516283000E75CFC /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630B82516283000E75CFC /* StatsViewController.swift */; };
+		276630BB2516285000E75CFC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630BA2516285000E75CFC /* SettingsViewController.swift */; };
+		276630BE2516289000E75CFC /* ProjectListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630BD2516289000E75CFC /* ProjectListTableViewController.swift */; };
+		276630C0251628B400E75CFC /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630BF251628B400E75CFC /* ProjectTableViewController.swift */; };
+		276630C2251628F100E75CFC /* ObjectiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630C1251628F100E75CFC /* ObjectiveTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		271EC05E2515BA8D002B0442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271EC0612515BA8D002B0442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		271EC0632515BA8D002B0442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		276630B4251627CB00E75CFC /* TimerSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSelectViewController.swift; sourceTree = "<group>"; };
+		276630B62516280500E75CFC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		276630B82516283000E75CFC /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		276630BA2516285000E75CFC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		276630BD2516289000E75CFC /* ProjectListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListTableViewController.swift; sourceTree = "<group>"; };
+		276630BF251628B400E75CFC /* ProjectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
+		276630C1251628F100E75CFC /* ObjectiveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +85,13 @@
 			isa = PBXGroup;
 			children = (
 				271EC0592515BA8C002B0442 /* HomeViewController.swift */,
+				276630B4251627CB00E75CFC /* TimerSelectViewController.swift */,
+				276630B62516280500E75CFC /* TimerViewController.swift */,
+				276630B82516283000E75CFC /* StatsViewController.swift */,
+				276630BA2516285000E75CFC /* SettingsViewController.swift */,
+				276630BD2516289000E75CFC /* ProjectListTableViewController.swift */,
+				276630BF251628B400E75CFC /* ProjectTableViewController.swift */,
+				276630C1251628F100E75CFC /* ObjectiveTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,8 +191,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276630C0251628B400E75CFC /* ProjectTableViewController.swift in Sources */,
+				276630C2251628F100E75CFC /* ObjectiveTableViewController.swift in Sources */,
+				276630B72516280500E75CFC /* TimerViewController.swift in Sources */,
+				276630BE2516289000E75CFC /* ProjectListTableViewController.swift in Sources */,
 				271EC05A2515BA8C002B0442 /* HomeViewController.swift in Sources */,
+				276630BB2516285000E75CFC /* SettingsViewController.swift in Sources */,
 				271EC0562515BA8C002B0442 /* AppDelegate.swift in Sources */,
+				276630B5251627CB00E75CFC /* TimerSelectViewController.swift in Sources */,
+				276630B92516283000E75CFC /* StatsViewController.swift in Sources */,
 				271EC0582515BA8C002B0442 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
