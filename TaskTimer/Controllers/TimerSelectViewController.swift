@@ -17,6 +17,22 @@ class TimerSelectViewController: UIViewController {
     }
     
 
+    @IBAction func startRunningTime(_ sender: Any) {
+        startNewRunningTimer()
+    }
+    
+    func startNewRunningTimer() {
+        performSegue(withIdentifier: "goToTimer", sender: self)
+        
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let destinationVC = segue.destination as! TimerViewController
+            
+            destinationVC.initialTime = 0
+            
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 

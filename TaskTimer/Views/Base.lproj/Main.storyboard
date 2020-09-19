@@ -22,6 +22,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="New Timer"/>
+                                        <connections>
+                                            <segue destination="Dfe-pU-dmY" kind="show" id="4Xo-Lj-tIr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV2-mQ-XvZ">
                                         <rect key="frame" x="0.0" y="98" width="200" height="48"/>
@@ -63,8 +66,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQX-wL-vkY">
-                                <rect key="frame" x="86.5" y="388.5" width="241" height="119.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQX-wL-vkY">
+                                <rect key="frame" x="50" y="388.5" width="314.5" height="119.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -97,6 +100,7 @@
                     <navigationItem key="navigationItem" title="Timer" id="3jA-md-fjM"/>
                     <connections>
                         <outlet property="lapsedTimeLabel" destination="zQX-wL-vkY" id="yET-0i-7IM"/>
+                        <outlet property="timeLabel" destination="zQX-wL-vkY" id="kOD-ZQ-Rwa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lA-Xr-Kda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -254,6 +258,9 @@
                                                 <rect key="frame" x="0.0" y="46" width="414" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <state key="normal" title="Start"/>
+                                                <connections>
+                                                    <action selector="startRunningTime:" destination="Dfe-pU-dmY" eventType="touchUpInside" id="BoP-bx-3Dc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -372,4 +379,7 @@
             <point key="canvasLocation" x="4220" y="952"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cc7-ap-gTc"/>
+    </inferredMetricsTieBreakers>
 </document>
