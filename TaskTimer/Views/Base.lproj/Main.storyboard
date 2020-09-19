@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xfw-ir-GNd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menu-->
+        <scene sceneID="26p-Gw-bvI">
+            <objects>
+                <viewController id="wUu-8v-gGT" customClass="HomeViewController" customModule="TaskTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GI2-Zl-0XA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Q89-7T-Ejn">
+                                <rect key="frame" x="107" y="326" width="200" height="244"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLs-OL-wuT">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="New Timer"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV2-mQ-XvZ">
+                                        <rect key="frame" x="0.0" y="98" width="200" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="My Projects"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cd-pN-t8C">
+                                        <rect key="frame" x="0.0" y="196" width="200" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="My Productivity"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Q89-7T-Ejn" firstAttribute="centerX" secondItem="GI2-Zl-0XA" secondAttribute="centerX" id="HQi-Qa-VeG"/>
+                            <constraint firstItem="Q89-7T-Ejn" firstAttribute="centerY" secondItem="GI2-Zl-0XA" secondAttribute="centerY" id="QnZ-lo-5mH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cRe-0s-zsb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Menu" id="mdg-cK-6pi"/>
+                    <connections>
+                        <segue destination="Dfe-pU-dmY" kind="show" identifier="goToTimerSelect" id="Cc7-ap-gTc"/>
+                        <segue destination="eTC-24-KAv" kind="show" identifier="goToProjects" id="3t7-oN-bri"/>
+                        <segue destination="nkc-nc-Day" kind="show" identifier="goToStatistics" id="hYk-i9-BWq"/>
+                        <segue destination="OEb-9U-Olp" kind="show" identifier="goToSettings" id="P8r-B0-265"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7f-sp-Kgk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568.1159420289857" y="223.66071428571428"/>
+        </scene>
+        <!--Task Timer-->
+        <scene sceneID="woE-Jp-Rrw">
+            <objects>
+                <viewController id="aqr-E5-K51" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SUX-6j-HNY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQX-wL-vkY">
+                                <rect key="frame" x="143" y="418" width="123" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Cup-dm-cSM"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Task Timer" id="3jA-md-fjM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lA-Xr-Kda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3345" y="224"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AVH-hL-dD9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xfw-ir-GNd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3nJ-FD-yrm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wUu-8v-gGT" kind="relationship" relationship="rootViewController" id="GBj-RD-5as"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nlh-KK-ckC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657.97101449275362" y="223.66071428571428"/>
+        </scene>
+        <!--Productivity Stats-->
+        <scene sceneID="bNh-gM-lha">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6nD-69-kzm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="nkc-nc-Day" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q2I-oO-HBX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qXz-tT-7sE"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Productivity Stats" id="Smd-Qs-y3o"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2470" y="1690"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="rMy-wU-3Bu">
+            <objects>
+                <viewController id="OEb-9U-Olp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zm3-nP-KiB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5Ve-t5-KEY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="TCg-Sl-0Ze"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Z4-Yz-aPq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2470" y="2397"/>
+        </scene>
+        <!--New Timer-->
+        <scene sceneID="Ml4-t6-U4p">
+            <objects>
+                <viewController id="Dfe-pU-dmY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xWq-XX-cPD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LZG-qG-aZf">
+                                <rect key="frame" x="161" y="423" width="92.5" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zS8-eX-6oQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="92.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpR-ko-6Gt">
+                                        <rect key="frame" x="0.0" y="20.5" width="92.5" height="30"/>
+                                        <state key="normal" title="Start"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t6o-Kv-aVX">
+                                <rect key="frame" x="152" y="495" width="108" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZa-xO-g3d">
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlY-kc-KTt">
+                                        <rect key="frame" x="0.0" y="20.5" width="108" height="30"/>
+                                        <state key="normal" title="Start"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jZa-xO-g3d" firstAttribute="centerX" secondItem="t6o-Kv-aVX" secondAttribute="centerX" id="WWM-8h-hPy"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LZG-qG-aZf" firstAttribute="centerX" secondItem="xWq-XX-cPD" secondAttribute="centerX" id="Lzf-av-o68"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pIP-Jp-wnf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Timer" id="7CG-xI-qyz"/>
+                    <connections>
+                        <segue destination="aqr-E5-K51" kind="show" identifier="goToTimer" id="MMW-qd-4Fq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JkB-Fg-iKz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2470" y="224"/>
+        </scene>
+        <!--Project List-->
+        <scene sceneID="g6r-FS-dwf">
+            <objects>
+                <tableViewController id="eTC-24-KAv" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JSV-aN-QHu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XLG-q3-2I3">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XLG-q3-2I3" id="r7l-6z-7On">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eTC-24-KAv" id="npk-YP-7oB"/>
+                            <outlet property="delegate" destination="eTC-24-KAv" id="CIk-yg-FIB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Project List" id="QlS-iM-XSa"/>
+                    <connections>
+                        <segue destination="dRf-xQ-ysY" kind="show" identifier="goToProject" id="uSm-Km-BqD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UDu-Ej-Hxj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2466" y="952"/>
+        </scene>
+        <!--Project-->
+        <scene sceneID="QLk-mb-3Nn">
+            <objects>
+                <tableViewController id="dRf-xQ-ysY" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PoS-db-0JW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5mj-g2-Rvn">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5mj-g2-Rvn" id="rGo-Rf-Hqb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dRf-xQ-ysY" id="9ot-MD-yLk"/>
+                            <outlet property="delegate" destination="dRf-xQ-ysY" id="d6c-9c-wuT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Project" id="Tzr-xe-j1z"/>
+                    <connections>
+                        <segue destination="SeE-ts-NnG" kind="show" identifier="goToObjective" id="RPs-uG-46Q"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFL-DJ-ERz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3345" y="952"/>
+        </scene>
+        <!--Objective-->
+        <scene sceneID="kqw-7o-Yo4">
+            <objects>
+                <tableViewController id="SeE-ts-NnG" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cgg-8M-OKg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="csA-qf-t03">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="csA-qf-t03" id="Lb5-P6-AlP">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SeE-ts-NnG" id="KDR-WM-TGb"/>
+                            <outlet property="delegate" destination="SeE-ts-NnG" id="wWs-Yv-lza"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Objective" id="Dy9-ZC-Vt2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgT-BF-C18" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4220" y="952"/>
+        </scene>
+    </scenes>
+</document>
