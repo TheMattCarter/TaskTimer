@@ -9,7 +9,7 @@
 import UIKit
 
 class TimerViewController: UIViewController {
-
+    
     
     var timerMode = 0
     
@@ -49,16 +49,21 @@ class TimerViewController: UIViewController {
         }
         
     }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        timer.invalidate()
+    }
+    
+    
     func startCountDown() {
         print ("countdown")
         modeLabel?.text = "insert inspirational quote here"
         timer.invalidate()
         totalSecondsLapsedWorking = 0
         
-//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(descendingTimer), userInfo: nil, repeats: true)
+        //        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(descendingTimer), userInfo: nil, repeats: true)
         
-       
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             self.totalSecondsLapsedWorking += 1
             self.timerCurrentTime -= 1
@@ -77,7 +82,7 @@ class TimerViewController: UIViewController {
         
         // interval progress label setup. may need a compute progress function
         progressLabel.isHidden = false
-        progressLabel.text = "\(qtyWorkIntervalsCompleted + 1) / \(qtyIntervals)"
+        
         
         let totalRunTime = qtyIntervals * (workTime + breakTime)
         let workTimeSelected = workTime
@@ -85,113 +90,125 @@ class TimerViewController: UIViewController {
         let breakTimeSelected = breakTime
         var btProgress = breakTimeLapsed
         
-        print("intervals")
+        print("\(qtyIntervals) intervals")
         print("total run time is \(totalRunTime) seconds")
+        
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             
+            //update progress label
+            if self.qtyWorkIntervalsCompleted == 0 {
+                self.progressLabel.text = "1 / \(self.qtyIntervals)"}
+            else {
+            self.progressLabel.text = "\(self.qtyWorkIntervalsCompleted) / \(self.qtyIntervals)"
+            }
+            
             //if all intervals done
-            if (self.qtyWorkIntervalsCompleted + self.qtyBreakIntervalsCompleted) / 2 == self.qtyIntervals {
+            if self.qtyWorkIntervalsCompleted == self.qtyIntervals  {
                 timer.invalidate()
                 print("done")
                 self.modeLabel?.text = "done"
             }
             
-           else if self.qtyWorkIntervalsCompleted == self.qtyBreakIntervalsCompleted {
-            
+            //for work int
+            else if self.qtyWorkIntervalsCompleted == self.qtyBreakIntervalsCompleted {
+                
                 btProgress = 0
                 self.breakTime = breakTimeSelected
                 
-            //work label
-            self.modeLabel.text = "work"
-            
-            //update time
-            self.workTime -= 1
-            self.updateTimeLabel(timerLabelSeconds: self.workTime)
-            self.workTimeLapsed += 1
-            wtProgress += 1
-            print("\(self.workTime) seconds work remaining")
-            
-            //marking end of work interval
+                //work label
+                self.modeLabel.text = "work"
+                
+                //update time
+                self.workTime -= 1
+                self.updateTimeLabel(timerLabelSeconds: self.workTime)
+                self.workTimeLapsed += 1
+                wtProgress += 1
+                print("\(self.workTime) seconds work remaining")
+                
+                //marking end of work interval
                 if wtProgress == workTimeSelected {
-                self.qtyWorkIntervalsCompleted += 1
-                print("\(self.qtyWorkIntervalsCompleted) work intervals completed")
+                    self.qtyWorkIntervalsCompleted += 1
+                    print("\(self.qtyWorkIntervalsCompleted) work intervals completed")
                     self.totalSecondsLapsedWorking = self.workTimeLapsed
-                print("\(self.totalSecondsLapsedWorking) seconds of total work")
+                    print("\(self.totalSecondsLapsedWorking) seconds of total work")
+                    
+                }
                 
             }
-                
-            }
+            
+            //for break int
             else if self.qtyWorkIntervalsCompleted > self.qtyBreakIntervalsCompleted {
-           
+                
                 //refresh work interval
-            wtProgress = 0
+                wtProgress = 0
                 self.workTime = workTimeSelected
                 
-            //break label
+                //break label
                 self.modeLabel.text = "break"
                 
-            //update time
+                //update time
                 self.breakTime -= 1
                 self.updateTimeLabel(timerLabelSeconds: self.breakTime)
                 self.breakTimeLapsed += 1
                 btProgress += 1
                 print("\(self.breakTime) seconds remaining in break")
                 
-            //marking end of break period
+                //marking end of break period
                 if btProgress == breakTimeSelected {
                     self.qtyBreakIntervalsCompleted += 1
                     print("\(self.qtyBreakIntervalsCompleted) break intervals completed")
                     self.totalSecondsLapsedResting = self.breakTimeLapsed
                     print("\(self.totalSecondsLapsedResting) seconds of total break time")
-                 
+                    
+                    
                 }
-        }
+            }
             else {
-                print ("error")
+                print ("error retrieving interval status")
             }
         }
     }
     
     func startRunningTime() {
-           print("running time")
+        print("running time")
         modeLabel?.text = "insert another inspirational quote here"
-           timer.invalidate()
-           totalSecondsLapsedWorking = 0
-           
+        timer.invalidate()
+        totalSecondsLapsedWorking = 0
+        
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-       
+            
             self.totalSecondsLapsedWorking += 1
             self.timerCurrentTime += 1
             print(self.timerCurrentTime)
             self.updateTimeLabel(timerLabelSeconds: self.timerCurrentTime)
-        
-        }
             
-       }
+        }
+        
+    }
     
-//    @objc func descendingTimer() {
-//        totalSecondsLapsedWorking += 1
-//        timerCurrentTime -= 1
-//        print (timerCurrentTime)
-//        updateTimeLabel(timerLabelSeconds: timerCurrentTime)
-//    }
+    //    @objc func descendingTimer() {
+    //        totalSecondsLapsedWorking += 1
+    //        timerCurrentTime -= 1
+    //        print (timerCurrentTime)
+    //        updateTimeLabel(timerLabelSeconds: timerCurrentTime)
+    //    }
     
-//    @objc func ascendingTimer() {
-//           totalSecondsLapsedWorking += 1
-//           timerCurrentTime += 1
-//           print(timerCurrentTime)
-//        updateTimeLabel(timerLabelSeconds: timerCurrentTime)
-//       }
+    //    @objc func ascendingTimer() {
+    //           totalSecondsLapsedWorking += 1
+    //           timerCurrentTime += 1
+    //           print(timerCurrentTime)
+    //        updateTimeLabel(timerLabelSeconds: timerCurrentTime)
+    //       }
     
     
     func updateTimeLabel(timerLabelSeconds: Int) {
-
+        
         let timeFormatter = DateComponentsFormatter()
         timeFormatter.allowedUnits = [.hour, .minute, .second]
         timeFormatter.unitsStyle = .positional
         timeFormatter.zeroFormattingBehavior = .pad
-
+        
         let formattedTimeValue = timeFormatter.string(from: TimeInterval(timerLabelSeconds))
         
         timeLabel.text = formattedTimeValue
