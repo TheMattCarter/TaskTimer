@@ -11,20 +11,35 @@ import UIKit
 class TimerViewController: UIViewController {
 
     
+    var timerMode = 0
+    
     var timer = Timer()
     var timerCurrentTime = 0
-    var timerRestTime = 0
-    var timerQtyIntervals = 0
-    var timerMode = 0
-    var secondsLapsedWorking = 0
-    var secondsLapsedResting = 0
+    
+    
+    var workTime = 0
+    var workTimeLapsed = 0
+    
+    var breakTime = 0
+    var breakTimeLapsed = 0
+    
+    var qtyIntervals = 0
+    var qtyWorkIntervalsCompleted = 0
+    var qtyBreakIntervalsCompleted = 0
+    
+    //total progress
+    var totalSecondsLapsedWorking = 0
+    var totalSecondsLapsedResting = 0
+    
     @IBOutlet weak var modeLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel!
     
     @IBOutlet weak var timeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(timerCurrentTime)
+        progressLabel.isHidden = true
         
         switch timerMode{
         case 0: startRunningTime()
@@ -39,100 +54,135 @@ class TimerViewController: UIViewController {
         print ("countdown")
         modeLabel?.text = "insert inspirational quote here"
         timer.invalidate()
-        secondsLapsedWorking = 0
+        totalSecondsLapsedWorking = 0
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(descendingTimer), userInfo: nil, repeats: true)
+//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(descendingTimer), userInfo: nil, repeats: true)
         
+       
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.totalSecondsLapsedWorking += 1
+            self.timerCurrentTime -= 1
+            print (self.timerCurrentTime)
+            self.updateTimeLabel(timerLabelSeconds: self.timerCurrentTime)
+            
+            if self.timerCurrentTime == 0 {
+                timer.invalidate()
+                print("done")
+                self.modeLabel?.text = "done"
+            }
+        }
     }
     
     func startIntervals() {
-        let intervalsToExecute = timerQtyIntervals
-        let selectedWorkTime = timerCurrentTime
         
-        print("interval")
-                
-        for i in 0..<(2 * timerQtyIntervals){
+        // interval progress label setup. may need a compute progress function
+        progressLabel.isHidden = false
+        progressLabel.text = "\(qtyWorkIntervalsCompleted + 1) / \(qtyIntervals)"
+        
+        let totalRunTime = qtyIntervals * (workTime + breakTime)
+        let workTimeSelected = workTime
+        var wtProgress = workTimeLapsed
+        let breakTimeSelected = breakTime
+        var btProgress = breakTimeLapsed
+        
+        print("intervals")
+        print("total run time is \(totalRunTime) seconds")
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             
-            if timerCurrentTime > 0 {
-                
-                print("period \((i/2) + 1) of \(intervalsToExecute)")
-                
+            //if all intervals done
+            if (self.qtyWorkIntervalsCompleted + self.qtyBreakIntervalsCompleted) / 2 == self.qtyIntervals {
                 timer.invalidate()
-                print("work")
-                modeLabel.text = "work"
-                //timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(descendingTimer), userInfo: nil, repeats: true)
-                
-                timerCurrentTime = 0
-            } else {
-                timer.invalidate()
-                print("break")
-                modeLabel.text = "break"
-                //timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(intBreakTimer), userInfo: nil, repeats: true)
-                timerCurrentTime = selectedWorkTime
+                print("done")
+                self.modeLabel?.text = "done"
             }
-
-        timerQtyIntervals -= 1
+            
+           else if self.qtyWorkIntervalsCompleted == self.qtyBreakIntervalsCompleted {
+            
+                btProgress = 0
+                self.breakTime = breakTimeSelected
+                
+            //work label
+            self.modeLabel.text = "work"
+            
+            //update time
+            self.workTime -= 1
+            self.updateTimeLabel(timerLabelSeconds: self.workTime)
+            self.workTimeLapsed += 1
+            wtProgress += 1
+            print("\(self.workTime) seconds work remaining")
+            
+            //marking end of work interval
+                if wtProgress == workTimeSelected {
+                self.qtyWorkIntervalsCompleted += 1
+                print("\(self.qtyWorkIntervalsCompleted) work intervals completed")
+                    self.totalSecondsLapsedWorking = self.workTimeLapsed
+                print("\(self.totalSecondsLapsedWorking) seconds of total work")
+                
+            }
+                
+            }
+            else if self.qtyWorkIntervalsCompleted > self.qtyBreakIntervalsCompleted {
+           
+                //refresh work interval
+            wtProgress = 0
+                self.workTime = workTimeSelected
+                
+            //break label
+                self.modeLabel.text = "break"
+                
+            //update time
+                self.breakTime -= 1
+                self.updateTimeLabel(timerLabelSeconds: self.breakTime)
+                self.breakTimeLapsed += 1
+                btProgress += 1
+                print("\(self.breakTime) seconds remaining in break")
+                
+            //marking end of break period
+                if btProgress == breakTimeSelected {
+                    self.qtyBreakIntervalsCompleted += 1
+                    print("\(self.qtyBreakIntervalsCompleted) break intervals completed")
+                    self.totalSecondsLapsedResting = self.breakTimeLapsed
+                    print("\(self.totalSecondsLapsedResting) seconds of total break time")
+                 
+                }
         }
-        
+            else {
+                print ("error")
+            }
+        }
     }
     
     func startRunningTime() {
            print("running time")
         modeLabel?.text = "insert another inspirational quote here"
            timer.invalidate()
-           secondsLapsedWorking = 0
+           totalSecondsLapsedWorking = 0
            
-           timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ascendingTimer), userInfo: nil, repeats: true)
-           
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+       
+            self.totalSecondsLapsedWorking += 1
+            self.timerCurrentTime += 1
+            print(self.timerCurrentTime)
+            self.updateTimeLabel(timerLabelSeconds: self.timerCurrentTime)
+        
+        }
+            
        }
     
-    @objc func descendingTimer() {
-        secondsLapsedWorking += 1
-        timerCurrentTime -= 1
-        print (timerCurrentTime)
-        updateTimeLabel(timerLabelSeconds: timerCurrentTime)
-    }
-    
-    @objc func ascendingTimer() {
-           secondsLapsedWorking += 1
-           timerCurrentTime += 1
-           print(timerCurrentTime)
-        updateTimeLabel(timerLabelSeconds: timerCurrentTime)
-       }
-    
-    @objc func intBreakTimer() {
-        secondsLapsedResting += 1
-        timerRestTime -= 1
-        print(timerRestTime)
-        updateTimeLabel(timerLabelSeconds: timerRestTime)
-
-    }
-    
-//    @objc func intTimer() {
-//
-//        let selectedWorkTime = timerCurrentTime
-//
-//        if timer.timeinterval < selectedWorkTime {
-//            print("work")
-//            modeLabel.text = "work"
-//            secondsLapsedWorking += 1
-//            timerCurrentTime -= 1
-//            print(timerCurrentTime)
-//            updateTimeLabel(timerLabelSeconds: timerCurrentTime)
-//            // timerCurrentTime = 0
-//
-//        } else {
-//            print("break")
-//            modeLabel.text = "break"
-//            secondsLapsedResting += 1
-//            timerRestTime -= 1
-//            print(timerRestTime)
-//            updateTimeLabel(timerLabelSeconds: timerRestTime)
-//            timerCurrentTime = selectedWorkTime
-//        }
-//
+//    @objc func descendingTimer() {
+//        totalSecondsLapsedWorking += 1
+//        timerCurrentTime -= 1
+//        print (timerCurrentTime)
+//        updateTimeLabel(timerLabelSeconds: timerCurrentTime)
 //    }
-
+    
+//    @objc func ascendingTimer() {
+//           totalSecondsLapsedWorking += 1
+//           timerCurrentTime += 1
+//           print(timerCurrentTime)
+//        updateTimeLabel(timerLabelSeconds: timerCurrentTime)
+//       }
     
     
     func updateTimeLabel(timerLabelSeconds: Int) {
@@ -159,7 +209,7 @@ class TimerViewController: UIViewController {
     
     
     func stopTimer() {
-        print(secondsLapsedWorking)
+        print(totalSecondsLapsedWorking)
         timer.invalidate()
     }
 }

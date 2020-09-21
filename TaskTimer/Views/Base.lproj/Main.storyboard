@@ -99,11 +99,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="progress label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ow-lK-82Q">
+                                <rect key="frame" x="153" y="279" width="108" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="2Ow-lK-82Q" firstAttribute="centerX" secondItem="SUX-6j-HNY" secondAttribute="centerX" id="AWu-cc-YPz"/>
                             <constraint firstItem="HAG-v4-DV4" firstAttribute="centerX" secondItem="SUX-6j-HNY" secondAttribute="centerX" id="Dii-SV-Fkr"/>
                             <constraint firstItem="zQX-wL-vkY" firstAttribute="centerY" secondItem="SUX-6j-HNY" secondAttribute="centerY" id="G4O-Td-t9V"/>
+                            <constraint firstItem="2Ow-lK-82Q" firstAttribute="top" secondItem="wbw-NY-neZ" secondAttribute="bottom" constant="5" id="LtY-fb-HHE"/>
                             <constraint firstItem="Cup-dm-cSM" firstAttribute="bottom" secondItem="HAG-v4-DV4" secondAttribute="bottom" constant="50" id="UDG-ke-Yz0"/>
                             <constraint firstItem="zQX-wL-vkY" firstAttribute="centerX" secondItem="SUX-6j-HNY" secondAttribute="centerX" id="t73-sN-hIC"/>
                             <constraint firstItem="wbw-NY-neZ" firstAttribute="centerX" secondItem="SUX-6j-HNY" secondAttribute="centerX" id="wGV-46-a7d"/>
@@ -114,6 +122,7 @@
                     <navigationItem key="navigationItem" title="Timer" id="3jA-md-fjM"/>
                     <connections>
                         <outlet property="modeLabel" destination="wbw-NY-neZ" id="BMV-uD-BpB"/>
+                        <outlet property="progressLabel" destination="2Ow-lK-82Q" id="DoK-og-Jit"/>
                         <outlet property="timeLabel" destination="zQX-wL-vkY" id="kOD-ZQ-Rwa"/>
                     </connections>
                 </viewController>
@@ -191,7 +200,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1200" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfM-sx-FdJ">
+                                            <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1200" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfM-sx-FdJ">
                                                 <rect key="frame" x="0.0" y="41" width="414" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="fny-cI-HRV"/>
@@ -242,7 +251,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aQa-xY-q5E">
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="110"/>
                                                         <subviews>
-                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1500" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6n-xR-RdZ">
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1500" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6n-xR-RdZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="80"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="qs9-HK-OXv"/>
@@ -262,7 +271,7 @@
                                                     <stackView opaque="NO" contentMode="right" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="chk-gI-fGf">
                                                         <rect key="frame" x="207" y="0.0" width="207" height="110"/>
                                                         <subviews>
-                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="300" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leq-MD-4cO">
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="300" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leq-MD-4cO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="80"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="Hrz-aB-qYX"/>

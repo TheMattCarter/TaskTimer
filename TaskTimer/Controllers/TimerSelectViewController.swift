@@ -16,11 +16,11 @@ class TimerSelectViewController: UIViewController {
     @IBOutlet weak var breakCountDownTime: UIDatePicker!
     @IBOutlet weak var qtyIntervalsLabel: UILabel!
     @IBOutlet weak var qtyIntevalsStepper: UIStepper!
-    var selectedInitialTime = 0
-    var restTime = 0
+    var initialTimeSelected = 0
+    var breakTimeSelected = 0
     @IBOutlet weak var intervalLabel: UILabel!
-    var qtyIntervals = 4
-    var mode = 0
+    var qtyIntervalsSelected = 4
+    var timerModeSelected = 0
     
     
     override func viewDidLoad() {
@@ -39,35 +39,35 @@ class TimerSelectViewController: UIViewController {
     //String(format: “%.2f”, inputValue)
     
     @IBAction func startCountDown(_ sender: UIDatePicker) {
-        selectedInitialTime = Int(basicCountDownTime.countDownDuration)
-       restTime = 0
-       qtyIntervals = 0
-        mode = 2
+        initialTimeSelected = Int(basicCountDownTime.countDownDuration)
+       breakTimeSelected = 0
+       qtyIntervalsSelected = 0
+        timerModeSelected = 2
         
         goToTimer()
     }
     
     @IBAction func startIntervals(_ sender: Any) {
-        selectedInitialTime = Int(workCountDownTime.countDownDuration)
-        restTime = Int(breakCountDownTime.countDownDuration)
-        qtyIntervals = Int(qtyIntevalsStepper.value)
-        mode = 1
+        initialTimeSelected = Int(workCountDownTime.countDownDuration)
+        breakTimeSelected = Int(breakCountDownTime.countDownDuration)
+        qtyIntervalsSelected = Int(qtyIntevalsStepper.value)
+        timerModeSelected = 1
         
         goToTimer()
     }
     
     @IBAction func startRunningTime(_ sender: Any) {
-        selectedInitialTime = 0
-        restTime = 0
-        qtyIntervals = 0
-        mode = 0
+        initialTimeSelected = 0
+        breakTimeSelected = 0
+        qtyIntervalsSelected = 0
+        timerModeSelected = 0
         
         goToTimer()
     }
     
     func goToTimer() {
         
-        print(selectedInitialTime)
+        print(initialTimeSelected)
         
         performSegue(withIdentifier: "goToTimer", sender: self)
         
@@ -76,10 +76,11 @@ class TimerSelectViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! TimerViewController
         
-        destinationVC.timerCurrentTime = self.selectedInitialTime
-        destinationVC.timerRestTime = self.restTime
-        destinationVC.timerQtyIntervals = self.qtyIntervals
-        destinationVC.timerMode = self.mode
+        destinationVC.timerCurrentTime = self.initialTimeSelected
+        destinationVC.workTime = self.initialTimeSelected
+        destinationVC.breakTime = self.breakTimeSelected
+        destinationVC.qtyIntervals = self.qtyIntervalsSelected
+        destinationVC.timerMode = self.timerModeSelected
         
     }
     
