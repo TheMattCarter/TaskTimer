@@ -5,6 +5,9 @@
 //  Created by Matthew Carter on 9/19/20.
 //  Copyright © 2020 Matthew Carter. All rights reserved.
 //
+    
+
+
 
 import UIKit
 import AVFoundation
@@ -42,6 +45,8 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         print(timerCurrentTime)
         progressLabel.isHidden = true
+        
+       
         
         switch timerMode{
         case 0: startRunningTime()

@@ -30,6 +30,8 @@ class EditTimePickerSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         defaultTimePicker.minuteInterval = defaults.integer(forKey: "defaultIncrements")
+        
         if myIndex == 2 {
             defaultTimePicker.countDownDuration = 1800
         } else if myIndex == 4 {

@@ -12,6 +12,12 @@ class SettingsTableViewController: UITableViewController {
     
     var selectedIndex = 0
     
+    @IBOutlet weak var doNotDisturbSwitch: UISwitch!
+    @IBOutlet weak var soundNotificationSwitch: UISwitch!
+    @IBOutlet weak var pushNotificationSwitch: UISwitch!
+    
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,10 +25,26 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-    //        defaults.set(<#T##value: Bool##Bool#>, forKey: <#T##String#>)
-            //        defaults.set(<#T##value: Bool##Bool#>, forKey: <#T##String#>)
-            //        defaults.set(<#T##value: Bool##Bool#>, forKey: <#T##String#>)
-                           }
+    
+        if doNotDisturbSwitch.isOn {
+            defaults.set(true, forKey: "doNotDisturb")
+        } else {
+            defaults.set(false, forKey: "doNotDisturb")
+        }
+    
+        if soundNotificationSwitch.isOn{
+            defaults.set(true, forKey: "soundNotifications")
+        } else {
+            defaults.set(false, forKey: "soundNotifications")
+        }
+        
+        if pushNotificationSwitch.isOn{
+            defaults.set(true, forKey: "pushNotifications")
+        } else {
+            defaults.set(false, forKey: "pushNotifications")
+        }
+                           
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editStringPickerSetting" {

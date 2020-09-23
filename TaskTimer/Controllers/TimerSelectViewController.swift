@@ -32,43 +32,22 @@ class TimerSelectViewController: UIViewController {
     }
     
     func updateUI() {
+            
+          //interval preferences
+            basicCountDownTime.minuteInterval = defaults.integer(forKey: "defaultIncrements")
+        workCountDownTime.minuteInterval = defaults.integer(forKey: "defaultIncrements")
+        breakCountDownTime.minuteInterval = defaults.integer(forKey: "defaultIncrements")
+        
+        //countdown duration preferences
+        basicCountDownTime.countDownDuration = defaults.object(forKey: "defaultCountDownTimeDuration") as! TimeInterval
+        workCountDownTime.countDownDuration = defaults.object(forKey: "defaultWorkTimeDuration") as! TimeInterval
+        breakCountDownTime.countDownDuration = defaults.object(forKey: "defaultBreakTimeDuration") as! TimeInterval
+        
+        //interval qtys
+        qtyIntervalsLabel.text = "(\(defaults.integer(forKey: "defaultQtyIntervals")))"
+        qtyIntervalsSelected = defaults.integer(forKey: "defaultQtyIntervals")
         
         
-//        basicCountDownTime.countDownDuration = 1800
-//            workCountDownTime.countDownDuration = 1500
-//            breakCountDownTime.countDownDuration = 300
-//            qtyIntervalsLabel.text = "(4)"
-//            qtyIntervalsSelected = 4
-//
-            
-            //update with settings
-            let defaultIncrementsPref = defaults.integer(forKey: "defaultIncrements") ?? 1800
-            let defaultCountDownPref = defaults.object(forKey: "defaultCountDownTimeDuration")
-            let defaultQtyIntervalsPref = defaults.integer(forKey: "defaultQtyIntervals")
-            let defaultWorkTimePref = defaults.object(forKey: "defaultWorkTimeDuration")
-            let defaultBreakTimePref = defaults.object(forKey: "defaultBreakTimeDuration")
-            
-            
-            basicCountDownTime.minuteInterval = defaultIncrementsPref
-            workCountDownTime.minuteInterval = defaultIncrementsPref
-            breakCountDownTime.minuteInterval = defaultIncrementsPref
-            
-            basicCountDownTime.countDownDuration = defaultCountDownPref as? TimeInterval ?? 1800
-            workCountDownTime.countDownDuration = defaultWorkTimePref as? TimeInterval ?? 1500
-            breakCountDownTime.countDownDuration = defaultBreakTimePref as? TimeInterval ?? 300
-            
-            
-            qtyIntervalsSelected
-                = defaultQtyIntervalsPref
-            intervalLabel.text = "(\(String(format: "%.0f", qtyIntervalsSelected)))"
-        
-            
-          
-    //        if defaultIncrementsPref != nil {
-    //            basicCountDownTime.minuteInterval = defaultIncrementsPref
-    //            workCountDownTime.minuteInterval = defaultIncrementsPref
-    //            breakCountDownTime.minuteInterval = defaultIncrementsPref
-    //        }
     
     }
         

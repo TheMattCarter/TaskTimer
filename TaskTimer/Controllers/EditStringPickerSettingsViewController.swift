@@ -16,6 +16,7 @@ class EditStringPickerSettingsViewController: UIViewController, UIPickerViewDele
     var defaultPickerData = ["Countdown", "Interval", "Running Time"]
     var defaultModeSelected = ""
     
+    //"defaultQuickTimerMode" = ["Countdown", "Interval", "Running Time"]
     
     @IBOutlet weak var settingTitle: UILabel!
     @IBOutlet weak var settingDescription: UILabel!

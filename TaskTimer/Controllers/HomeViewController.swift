@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: UIViewController {
 
     let defaults = UserDefaults.standard
+//    var timerModeSelected = 0
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +28,30 @@ class HomeViewController: UIViewController {
             
         } else {
             
+            
         //marks first use
         print("1st Use")
+        
+        //setting default preferences
+            defaults.set(5, forKey: "defaultIncrements")
+            defaults.set(1800,forKey:  "defaultCountDownTimeDuration")
+             defaults.set(4, forKey: "defaultQtyIntervals") //should be good
+            defaults.set(1500, forKey: "defaultWorkTimeDuration")
+            defaults.set(300, forKey: "defaultBreakTimeDuration")
+            defaults.set(true, forKey: "doNotDisturb")
+            defaults.set(true, forKey: "soundNotifications")
+            defaults.set(true, forKey: "pushNotifications")
+            defaults.set("Running Time", forKey: "defaultQuickTimerMode")
             
             
             
         }
         
+       
         
     }
-
-
+    
+    
+    
 }
 

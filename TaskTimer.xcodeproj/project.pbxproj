@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271D51D0251B8B0F00BC513A /* QuickTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271D51CF251B8B0F00BC513A /* QuickTimerViewController.swift */; };
 		271EC0562515BA8C002B0442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EC0552515BA8C002B0442 /* AppDelegate.swift */; };
 		271EC0582515BA8C002B0442 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EC0572515BA8C002B0442 /* SceneDelegate.swift */; };
 		271EC05A2515BA8C002B0442 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EC0592515BA8C002B0442 /* HomeViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		271D51CF251B8B0F00BC513A /* QuickTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTimerViewController.swift; sourceTree = "<group>"; };
 		271EC0522515BA8C002B0442 /* TaskTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271EC0552515BA8C002B0442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		271EC0572515BA8C002B0442 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,13 +95,14 @@
 		271EC0692515BDFC002B0442 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				271EC0592515BA8C002B0442 /* HomeViewController.swift */,
 				276630B4251627CB00E75CFC /* TimerSelectViewController.swift */,
 				276630B62516280500E75CFC /* TimerViewController.swift */,
+				271D51CF251B8B0F00BC513A /* QuickTimerViewController.swift */,
 				27AC54AA251A1522006015D2 /* SettingsTableViewController.swift */,
 				276630BA2516285000E75CFC /* EditStringPickerSettingsViewController.swift */,
 				27E95E4E251B0332006DBEA4 /* EditIntPickerSettingsViewController.swift */,
 				27E95E4C251AF2BA006DBEA4 /* EditTimePickerSettingsViewController.swift */,
-				271EC0592515BA8C002B0442 /* HomeViewController.swift */,
 				276630B82516283000E75CFC /* StatsViewController.swift */,
 				276630BD2516289000E75CFC /* ProjectListTableViewController.swift */,
 				276630BF251628B400E75CFC /* ProjectTableViewController.swift */,
@@ -224,6 +227,7 @@
 				271EC0562515BA8C002B0442 /* AppDelegate.swift in Sources */,
 				276630B5251627CB00E75CFC /* TimerSelectViewController.swift in Sources */,
 				276630B92516283000E75CFC /* StatsViewController.swift in Sources */,
+				271D51D0251B8B0F00BC513A /* QuickTimerViewController.swift in Sources */,
 				271EC0582515BA8C002B0442 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
