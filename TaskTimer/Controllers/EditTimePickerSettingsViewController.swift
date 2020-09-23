@@ -20,30 +20,69 @@ class EditTimePickerSettingsViewController: UIViewController {
     
     
     let defaults = UserDefaults.standard
+//need this shit?
+//    let defaultCountDownTimeSelected = 30
+//    let defaultWorkTimeSelected = 25
+//    let defaultBreakTimeSelected = 5
     
     @IBOutlet weak var defaultTimePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if myIndex == 2 {
+            defaultTimePicker.countDownDuration = 1800
+        } else if myIndex == 4 {
+            defaultTimePicker.countDownDuration = 1500
+        } else if myIndex == 5 {
+            defaultTimePicker.countDownDuration = 300
+        }
+        
+        
+        let defaultCountDownTimeSaved = defaults.object(forKey: "defaultCountDownTimeDuration")
+        let defaultWorkTimeSaved = defaults.object(forKey: "defaultWorkTimeDuration")
+        let defaultBreakTimeSaved = defaults.object(forKey: "defaultBreakTimeDuration")
+        
         settingTitle.text = settingTitles[myIndex]
         settingDescription.text = settingDescriptions[myIndex]
         
-//        switch myIndex {
-//        case 2:
-//
-//            ;
-//        case 4:
-//
-//            ;
-//        case 5:
-//
-//            ;
-//        default:
-//            print("error indexing setting")
-//        }
-        
-        
+        if myIndex == 2 {
+            if defaultCountDownTimeSaved != nil {
+                defaultTimePicker.countDownDuration = defaultCountDownTimeSaved as! TimeInterval
+            } else if defaultCountDownTimeSaved == nil {
+                defaultTimePicker.countDownDuration = 1800
+            }
+        } else if myIndex == 4 {
+            if defaultWorkTimeSaved != nil {
+                defaultTimePicker.countDownDuration = defaultWorkTimeSaved as! TimeInterval
+            } else if defaultWorkTimeSaved == nil {
+                defaultTimePicker.countDownDuration = 1500
+            }
+        } else if myIndex == 5 {
+            if defaultBreakTimeSaved != nil {
+                defaultTimePicker.countDownDuration = defaultBreakTimeSaved as! TimeInterval
+            } else if defaultWorkTimeSaved == nil {
+                defaultTimePicker.countDownDuration = 300
+            }
+           
+        } else {
+            print("error loading time duration setting options")
+        }
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if myIndex == 2 {
+            defaults.set(defaultTimePicker.countDownDuration, forKey: "defaultCountDownTimeDuration")
+            
+            // defaults.set(userSelection, forKey: "defaultIncrements")
+        } else if myIndex == 4 {
+            defaults.set(defaultTimePicker.countDownDuration, forKey: "defaultWorkTimeDuration")
+            
+        } else if myIndex == 5 {
+            defaults.set(defaultTimePicker.countDownDuration, forKey: "defaultBreakTimeDuration")
+            
+        }
     }
     
 

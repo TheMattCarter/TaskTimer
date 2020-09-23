@@ -40,6 +40,9 @@
                                         <rect key="frame" x="0.0" y="294" width="182" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Quick Timer"/>
+                                        <connections>
+                                            <action selector="quickTimerSelected:" destination="wUu-8v-gGT" eventType="touchUpInside" id="qS5-4P-2sU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -62,7 +65,7 @@
                         <segue destination="Dfe-pU-dmY" kind="show" identifier="goToTimerSelect" id="Cc7-ap-gTc"/>
                         <segue destination="eTC-24-KAv" kind="show" identifier="goToProjects" id="3t7-oN-bri"/>
                         <segue destination="nkc-nc-Day" kind="show" identifier="goToStatistics" id="hYk-i9-BWq"/>
-                        <segue destination="aqr-E5-K51" kind="show" id="DfM-fR-zUA"/>
+                        <segue destination="aqr-E5-K51" kind="show" identifier="quickTimerSegue" id="DfM-fR-zUA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7f-sp-Kgk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -139,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lA-Xr-Kda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568" y="1686"/>
+            <point key="canvasLocation" x="1568" y="1685"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AVH-hL-dD9">

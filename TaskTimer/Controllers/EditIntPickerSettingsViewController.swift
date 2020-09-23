@@ -14,6 +14,7 @@ class EditIntPickerSettingsViewController: UIViewController, UIPickerViewDelegat
        var settingDescriptions = ["Select default timer mode for quick timer.", "Select increments used to adjust timer settings.", "Select default countdown timer duration.", "Select default number of work intervals for interval timer.", "Select default work interval duration for interval mode.", "Select default break interval duration for interval mode."]
     var myIndex = 0
     var defaultPickerData: [Int] = [Int]()
+    var userSelection = 0
     
     @IBOutlet weak var settingTitle: UILabel!
     @IBOutlet weak var settingDescription: UILabel!
@@ -24,7 +25,8 @@ class EditIntPickerSettingsViewController: UIViewController, UIPickerViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let defaultIncrementsSaved = defaults.integer(forKey: "defaultIncrements") 
+        let defaultQtyIntervalsSaved = defaults.integer(forKey: "defaultQtyIntervals") 
         settingTitle.text = settingTitles[myIndex]
         settingDescription.text = settingDescriptions[myIndex]
         
@@ -32,20 +34,27 @@ class EditIntPickerSettingsViewController: UIViewController, UIPickerViewDelegat
         defaultPicker.dataSource = self
         
         
-        switch myIndex {
-        case 1:
+        if myIndex == 1 {
             defaultPickerData.append(contentsOf: [ 1, 2, 5, 10, 15, 20])
-            ;
-        case 3:
+            defaultPicker.selectRow(defaultPickerData.firstIndex(of: defaultIncrementsSaved) ?? 2, inComponent: 0, animated: false)
+            
+        } else if myIndex == 3 {
             defaultPickerData.append(contentsOf: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
-            ;
-        default:
-            print("error indexing setting")
+            defaultPicker.selectRow(defaultPickerData.firstIndex(of: defaultQtyIntervalsSaved) ?? 3, inComponent: 0, animated: false)
+        } else {
+            print("error loading Int setting options")
         }
        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        
+        if myIndex == 1 {
+            defaults.set(userSelection, forKey: "defaultIncrements")
+        } else if myIndex == 3 {
+            defaults.set(userSelection, forKey: "defaultQtyIntervals")
+        }
+        
            
        }
     
@@ -53,7 +62,7 @@ class EditIntPickerSettingsViewController: UIViewController, UIPickerViewDelegat
      //MARK: - Picker Setup Delegate Methods
     //
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    //        //update defaults...necessary?
+            userSelection = defaultPickerData[row]
         }
     //
         func numberOfComponents(in pickerView: UIPickerView) -> Int {
