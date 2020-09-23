@@ -25,9 +25,10 @@ class TimerSelectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //update with settings?
         basicCountDownTime.minuteInterval = 5
-        workCountDownTime.minuteInterval = 1
-        breakCountDownTime.minuteInterval = 1
+        workCountDownTime.minuteInterval = 5
+        breakCountDownTime.minuteInterval = 5
         
     }
     

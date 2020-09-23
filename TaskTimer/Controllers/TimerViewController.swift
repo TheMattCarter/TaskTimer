@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TimerViewController: UIViewController {
     
+    var player: AVAudioPlayer!
     
     var timerMode = 0
     
@@ -74,6 +76,11 @@ class TimerViewController: UIViewController {
                 timer.invalidate()
                 print("done")
                 self.modeLabel?.text = "done"
+                
+                //play sound
+                let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+                self.player = try! AVAudioPlayer(contentsOf: url!)
+                self.player.play()
             }
         }
     }
@@ -108,6 +115,7 @@ class TimerViewController: UIViewController {
                 timer.invalidate()
                 print("done")
                 self.modeLabel?.text = "done"
+                
             }
             
             //for work int
@@ -132,6 +140,11 @@ class TimerViewController: UIViewController {
                     print("\(self.qtyWorkIntervalsCompleted) work intervals completed")
                     self.totalSecondsLapsedWorking = self.workTimeLapsed
                     print("\(self.totalSecondsLapsedWorking) seconds of total work")
+                    
+                    //play sound
+                    let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+                    self.player = try! AVAudioPlayer(contentsOf: url!)
+                    self.player.play()
                     
                 }
                 
@@ -161,6 +174,10 @@ class TimerViewController: UIViewController {
                     self.totalSecondsLapsedResting = self.breakTimeLapsed
                     print("\(self.totalSecondsLapsedResting) seconds of total break time")
                     
+                    //play sound
+                    let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+                    self.player = try! AVAudioPlayer(contentsOf: url!)
+                    self.player.play()
                     
                 }
             }

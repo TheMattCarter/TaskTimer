@@ -16,10 +16,14 @@
 		276630B5251627CB00E75CFC /* TimerSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630B4251627CB00E75CFC /* TimerSelectViewController.swift */; };
 		276630B72516280500E75CFC /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630B62516280500E75CFC /* TimerViewController.swift */; };
 		276630B92516283000E75CFC /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630B82516283000E75CFC /* StatsViewController.swift */; };
-		276630BB2516285000E75CFC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630BA2516285000E75CFC /* SettingsViewController.swift */; };
+		276630BB2516285000E75CFC /* EditStringPickerSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630BA2516285000E75CFC /* EditStringPickerSettingsViewController.swift */; };
 		276630BE2516289000E75CFC /* ProjectListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630BD2516289000E75CFC /* ProjectListTableViewController.swift */; };
 		276630C0251628B400E75CFC /* ProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630BF251628B400E75CFC /* ProjectTableViewController.swift */; };
 		276630C2251628F100E75CFC /* ObjectiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276630C1251628F100E75CFC /* ObjectiveTableViewController.swift */; };
+		27AC54A7251A1016006015D2 /* alarm_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27AC54A6251A1016006015D2 /* alarm_sound.mp3 */; };
+		27AC54AB251A1522006015D2 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AC54AA251A1522006015D2 /* SettingsTableViewController.swift */; };
+		27E95E4D251AF2BA006DBEA4 /* EditTimePickerSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E95E4C251AF2BA006DBEA4 /* EditTimePickerSettingsViewController.swift */; };
+		27E95E4F251B0332006DBEA4 /* EditIntPickerSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E95E4E251B0332006DBEA4 /* EditIntPickerSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +38,14 @@
 		276630B4251627CB00E75CFC /* TimerSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSelectViewController.swift; sourceTree = "<group>"; };
 		276630B62516280500E75CFC /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		276630B82516283000E75CFC /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
-		276630BA2516285000E75CFC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		276630BA2516285000E75CFC /* EditStringPickerSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStringPickerSettingsViewController.swift; sourceTree = "<group>"; };
 		276630BD2516289000E75CFC /* ProjectListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListTableViewController.swift; sourceTree = "<group>"; };
 		276630BF251628B400E75CFC /* ProjectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewController.swift; sourceTree = "<group>"; };
 		276630C1251628F100E75CFC /* ObjectiveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveTableViewController.swift; sourceTree = "<group>"; };
+		27AC54A6251A1016006015D2 /* alarm_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound.mp3; sourceTree = "<group>"; };
+		27AC54AA251A1522006015D2 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		27E95E4C251AF2BA006DBEA4 /* EditTimePickerSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimePickerSettingsViewController.swift; sourceTree = "<group>"; };
+		27E95E4E251B0332006DBEA4 /* EditIntPickerSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIntPickerSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 		271EC0542515BA8C002B0442 /* TaskTimer */ = {
 			isa = PBXGroup;
 			children = (
+				27AC54A5251A0FF5006015D2 /* Soundfiles */,
 				271EC06E2515BEA1002B0442 /* Supporting Files */,
 				271EC06C2515BE24002B0442 /* Models */,
 				271EC06D2515BE28002B0442 /* Views */,
@@ -84,11 +93,14 @@
 		271EC0692515BDFC002B0442 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				271EC0592515BA8C002B0442 /* HomeViewController.swift */,
 				276630B4251627CB00E75CFC /* TimerSelectViewController.swift */,
 				276630B62516280500E75CFC /* TimerViewController.swift */,
+				27AC54AA251A1522006015D2 /* SettingsTableViewController.swift */,
+				276630BA2516285000E75CFC /* EditStringPickerSettingsViewController.swift */,
+				27E95E4E251B0332006DBEA4 /* EditIntPickerSettingsViewController.swift */,
+				27E95E4C251AF2BA006DBEA4 /* EditTimePickerSettingsViewController.swift */,
+				271EC0592515BA8C002B0442 /* HomeViewController.swift */,
 				276630B82516283000E75CFC /* StatsViewController.swift */,
-				276630BA2516285000E75CFC /* SettingsViewController.swift */,
 				276630BD2516289000E75CFC /* ProjectListTableViewController.swift */,
 				276630BF251628B400E75CFC /* ProjectTableViewController.swift */,
 				276630C1251628F100E75CFC /* ObjectiveTableViewController.swift */,
@@ -118,6 +130,14 @@
 				271EC0602515BA8D002B0442 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27AC54A5251A0FF5006015D2 /* Soundfiles */ = {
+			isa = PBXGroup;
+			children = (
+				27AC54A6251A1016006015D2 /* alarm_sound.mp3 */,
+			);
+			path = Soundfiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +200,7 @@
 			files = (
 				271EC0622515BA8D002B0442 /* LaunchScreen.storyboard in Resources */,
 				271EC05F2515BA8D002B0442 /* Assets.xcassets in Resources */,
+				27AC54A7251A1016006015D2 /* alarm_sound.mp3 in Resources */,
 				271EC05D2515BA8C002B0442 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,9 +215,12 @@
 				276630C0251628B400E75CFC /* ProjectTableViewController.swift in Sources */,
 				276630C2251628F100E75CFC /* ObjectiveTableViewController.swift in Sources */,
 				276630B72516280500E75CFC /* TimerViewController.swift in Sources */,
+				27AC54AB251A1522006015D2 /* SettingsTableViewController.swift in Sources */,
 				276630BE2516289000E75CFC /* ProjectListTableViewController.swift in Sources */,
 				271EC05A2515BA8C002B0442 /* HomeViewController.swift in Sources */,
-				276630BB2516285000E75CFC /* SettingsViewController.swift in Sources */,
+				27E95E4D251AF2BA006DBEA4 /* EditTimePickerSettingsViewController.swift in Sources */,
+				276630BB2516285000E75CFC /* EditStringPickerSettingsViewController.swift in Sources */,
+				27E95E4F251B0332006DBEA4 /* EditIntPickerSettingsViewController.swift in Sources */,
 				271EC0562515BA8C002B0442 /* AppDelegate.swift in Sources */,
 				276630B5251627CB00E75CFC /* TimerSelectViewController.swift in Sources */,
 				276630B92516283000E75CFC /* StatsViewController.swift in Sources */,
